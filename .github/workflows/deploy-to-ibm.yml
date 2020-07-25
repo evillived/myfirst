@@ -23,7 +23,7 @@ jobs:
         {
           "inbounds": [
             {
-              "port": 443,
+              "port": 8080,
               "protocol": "vmess",
               "settings": {
                 "clients": [
@@ -50,7 +50,7 @@ jobs:
         cat > manifest-ibm.yml << EOF
         ---
         applications:
-        - name: ibmv2yes
+        - name: ibmcfyes
           memory: 256M
           disk_quota: 256M
           random-route: true
@@ -67,5 +67,5 @@ jobs:
         cf_org: ${{ secrets.CF_ORG_IBM }}
         cf_space: ${{ secrets.CF_SPACE_IBM }}
         command: >
-          push ibmv2yes -f manifest-ibm.yml
+          push ibmcfyes -f manifest-ibm.yml
           
