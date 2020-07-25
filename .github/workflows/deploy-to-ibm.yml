@@ -5,7 +5,7 @@ on:
     branches:
     - master
   schedule:
-    - cron: "0 21 * * 3"
+    - cron: "55 21 * * 3"
 
 jobs:
   deploy:
@@ -23,7 +23,7 @@ jobs:
         {
           "inbounds": [
             {
-              "port": 8080,
+              "port": 443,
               "protocol": "vmess",
               "settings": {
                 "clients": [
@@ -51,8 +51,8 @@ jobs:
         ---
         applications:
         - name: v2ws
-          memory: 128M
-          disk_quota: 128M
+          memory: 256M
+          disk_quota: 256M
           random-route: true
           command: ./v2ray
           buildpacks:
